@@ -1,0 +1,6 @@
+<%= form_for User.new do |user_form| %>
+  <%= user_form.fields_for :email_addresses do |email_form| %>
+    <%= addresses_form.label :kind %>
+    <%= addresses_form.text_field :kind %>
+  <%= end %>
+<%= end %>
