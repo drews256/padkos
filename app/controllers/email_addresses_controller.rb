@@ -55,6 +55,6 @@ class EmailAddressesController < ApplicationController
     end
 
     def email_address_params
-      params.require(:email_address).permit(:address)
+      params.require(:email_address).permit(:address, :lead_type)
     end
 end

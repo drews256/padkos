@@ -1,0 +1,46 @@
+%tr
+  %td.width-10
+  %td.width-80
+    .image-wrapper
+      %h1.banner Padkos
+      %h2.tag-line Come eat with us
+      = image_tag('PineappleImageMedium.jpg', class: 'header-image')
+      %h3.more-about-us Eat healthy,
+      %h3.second delicious,
+      %h3.third  home cooked food anywhere you are.
+  %td.width-10
+%tr
+  %td.width-10
+  %td.width-80
+    .image-wrapper
+      = image_tag('CuttingBoardLarge.jpeg', class: 'header-image')
+      .cta-wrapper-1
+        %h2.cta-1 Are you interested in making food for other people?
+        %h3.cta-1-text Cook dinner and make 4 to 6 bucks for each person you cook for.
+        = form_for EmailAddress.new do |form|
+          = form.hidden_field :lead_type, value: 'food_maker'
+          = form.label :address, value: 'Sign up for more info on making food for Padkos'
+          = form.text_field :address, value: 'Email Address'
+          = form.submit 'Sign up', class: 'food-maker'
+      .cta-wrapper-2
+        %h2.cta-2 Want to eat a home cooked meal where ever you are?
+        %h3.cta-2-text Eat like a local where ever you happen to be.
+        = form_for EmailAddress.new do |form|
+          = form.hidden_field :lead_type, value: 'food_eater'
+          = form.label :address, value: 'Sign up for more info on eating food with Padkos'
+          = form.text_field :address, value: 'Email Address'
+          = form.submit 'Sign up', class: 'food-eater'
+  %td.width-10
+%tr
+  .footer
+    .width-33.footer-1
+      %h3 Come eat with us
+    .width-33.footer-2
+      .ul
+        .li
+          %h3 Contact us if you need anything!
+        .li
+          %h3 padkos@gmail.com
+    .width-33.footer-3
+      %h3
+        Let us know what you think.
