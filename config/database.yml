@@ -3,8 +3,8 @@ default: &default
   encoding: unicode
   pool: 5
   timeout: 5000
-  username: <%= `whoami` %>
-  password:
+  username: ''
+  password: ''
   host: localhost
   port: 5432
 
@@ -26,5 +26,6 @@ staging:
   pool: <%= ENV['MAX_THREADS'] || 5 %>
 
 production:
-  url:  <%= ENV['DATABASE_URL'] %>
+  <<: *default
+  database: padkos_prod
   pool: <%= ENV['MAX_THREADS'] || 5 %>

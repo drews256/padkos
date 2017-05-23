@@ -10,6 +10,7 @@ class EmailAddressesController < ApplicationController
 
   def new
     @email_address = EmailAddress.new
+    redirect_to '/'
   end
 
   def edit
@@ -20,10 +21,10 @@ class EmailAddressesController < ApplicationController
 
     respond_to do |format|
       if @email_address.save
-        format.html { redirect_to @email_address, notice: 'Email address was successfully created.' }
+        format.html { redirect_to '/', notice: 'Email address was successfully created.' }
         format.json { render :show, status: :created, location: @email_address }
       else
-        format.html { render :new }
+        format.html { redirect_to '/'}
         format.json { render json: @email_address.errors, status: :unprocessable_entity }
       end
     end
